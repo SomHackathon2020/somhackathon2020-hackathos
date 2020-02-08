@@ -1,1 +1,1 @@
-# [GET UP! WEB APP]
+# GET UP! WEB APP
