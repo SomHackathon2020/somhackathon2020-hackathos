@@ -26,10 +26,32 @@
   <section class="row d-flex justify-content-center">
     <div class="card w-75 bg-light mb-5" *ngFor="let cat of categories">
       <div><img class="" src="{{cat.imgUrl}}">{{cat.name}}</div>
-      <div class="custom-control custom-checkbox mb-3" *ngFor="let subcat of cat.subcategories">
-        <input class="custom-control-input" id="{{subcat.value}}" name="{{subcat.value}}" value="{{subcat.value}}" type="checkbox">
-        <label for="{{subcat.value}}" class="custom-control-label" for="customCheck2"><span _ngcontent-c7="">{{subcat.name}}</span></label>
+      <div>
+        <div class="custom-control custom-checkbox mb-3" *ngFor="let subcat of cat.subcategories">
+          <input class="custom-control-input" id="{{subcat.value}}" name="{{cat.Name}}Categories" value="{{subcat.value}}" type="checkbox">
+          <label for="{{subcat.value}}" class="custom-control-label" for="{{subcat.value}}"><span>{{subcat.name}}</span></label>
+        </div>
       </div>
+    </div>
+  </section>
+  <section class="row d-flex justify-content-center">
+    <div class="card w-75 bg-light mb-5">
+      <h3>Estas interresat en activitats grupals?</h3>
+      <div class="custom-control custom-checkbox mb-3">
+        <input class="custom-control-input" id="groupsYes" name="groupActivities" value="true" type="checkbox">
+        <label for="groupsYes" class="custom-control-label" for="groupsYes"><span>Si</span></label>
+        <input class="custom-control-input" id="groupsNo" name="groupActivities" value="false" type="checkbox">
+        <label for="groupsNo" class="custom-control-label" for="customCheck2"><span>No</span></label>
+      </div>
+    </div>
+  </section>
+  <section class="row d-flex justify-content-center">
+    <div class="card w-75 bg-light mb-5">
+      <h3>Estas interresat en activitats amb riscos?</h3>
+      <input class="custom-control-input" id="{{subcat.value}}" name="{{subcat.value}}" value="{{subcat.value}}" type="checkbox">
+      <label for="{{subcat.value}}" class="custom-control-label" for="customCheck2"><span _ngcontent-c7="">{{subcat.name}}</span></label>
+      <input class="custom-control-input" id="{{subcat.value}}" name="{{subcat.value}}" value="{{subcat.value}}" type="checkbox">
+      <label for="{{subcat.value}}" class="custom-control-label" for="customCheck2"><span _ngcontent-c7="">{{subcat.name}}</span></label>
     </div>
   </section>
 </main>

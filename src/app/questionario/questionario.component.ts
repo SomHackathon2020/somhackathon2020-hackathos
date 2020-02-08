@@ -38,7 +38,7 @@ export class QuestionarioComponent implements OnInit {
     },
     {
       name: "Cinema",
-      imgUrl: "../../assets/img/brand/cine.jpg",
+      imgUrl: "../../assets/img/brand/cinema.jpg",
       "subcategories": [
         {name: "Futbol", value: "football"},
         {name: "Natació", value: "swimming"},
@@ -50,7 +50,7 @@ export class QuestionarioComponent implements OnInit {
     },
     {
       name: "Gatronomia",
-      imgUrl: "../../assets/img/brand/comida.png",
+      imgUrl: "../../assets/img/brand/food.png",
       "subcategories": [
         {name: "Futbol", value: "football"},
         {name: "Natació", value: "swimming"},
