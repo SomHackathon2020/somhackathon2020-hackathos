@@ -23,11 +23,13 @@
       </div>
     </section>
   </section>
-  <section *ngFor="let cat of categories">
-    <div>{{cat.name}}</div>
-    <div *ngFor="let subcat of cat.subcategories">
-      <input type="checkbox" id="{{subcat.value}}" name="{{subcat.value}}" value="{{subcat.value}}">
-      <label for="{{subcat.value}}"> {{subcat.name}}</label>
+  <section class="row d-flex justify-content-center">
+    <div class="card w-75 bg-light mb-5" *ngFor="let cat of categories">
+      <div><img class="" src="{{cat.imgUrl}}">{{cat.name}}</div>
+      <div class="custom-control custom-checkbox mb-3" *ngFor="let subcat of cat.subcategories">
+        <input class="custom-control-input" id="{{subcat.value}}" name="{{subcat.value}}" value="{{subcat.value}}" type="checkbox">
+        <label for="{{subcat.value}}" class="custom-control-label" for="customCheck2"><span _ngcontent-c7="">{{subcat.name}}</span></label>
+      </div>
     </div>
   </section>
 </main>
