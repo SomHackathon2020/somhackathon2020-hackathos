@@ -19,39 +19,49 @@
     <section id="informationDivQuestionaris" class="section align-center section-lg row d-flex justify-content-center">
       <div class="bg-light shadow-sm rounded p-sm w-75 mt-5">
         <h3>Qüestionari d'interessos</h3>
-        <p>Omple el següent formulari per tindre una experiència personalitzada dins de la nostra plataforma.</p>
+        <p>Omple  el següent formulari per tindre una experiència personalitzada dins de la nostra plataforma.</p>
       </div>
     </section>
   </section>
   <section class="row d-flex justify-content-center">
     <div class="card w-75 bg-light mb-5" *ngFor="let cat of categories">
-      <div><img class="" src="{{cat.imgUrl}}">{{cat.name}}</div>
-      <div>
-        <div class="custom-control custom-checkbox mb-3" *ngFor="let subcat of cat.subcategories">
+      <div class="text-center"><img class="" src="{{cat.imgUrl}}"><span class="hoverImgText">{{cat.name}}</span></div>
+      <div class="text-center mt-3">
+        <div class="custom-control d-inline-block mr-5 custom-checkbox mb-3" *ngFor="let subcat of cat.subcategories">
           <input class="custom-control-input" id="{{subcat.value}}" name="{{cat.Name}}Categories" value="{{subcat.value}}" type="checkbox">
-          <label for="{{subcat.value}}" class="custom-control-label" for="{{subcat.value}}"><span>{{subcat.name}}</span></label>
+          <label for="{{subcat.value}}" class="custom-control-label"><span>{{subcat.name}}</span></label>
         </div>
       </div>
     </div>
   </section>
-  <section class="row d-flex justify-content-center">
+  <section class="row d-flex text-center justify-content-center">
     <div class="card w-75 bg-light mb-5">
-      <h3>Estas interresat en activitats grupals?</h3>
+      <h3>Estàs interessat en activitats grupals?</h3>
       <div class="custom-control custom-checkbox mb-3">
-        <input class="custom-control-input" id="groupsYes" name="groupActivities" value="true" type="checkbox">
-        <label for="groupsYes" class="custom-control-label" for="groupsYes"><span>Si</span></label>
-        <input class="custom-control-input" id="groupsNo" name="groupActivities" value="false" type="checkbox">
-        <label for="groupsNo" class="custom-control-label" for="customCheck2"><span>No</span></label>
+        <div class="d-inline-block mr-5">
+          <input class="custom-control-input" id="groupsYes" name="groupActivities" value="true" type="checkbox">
+          <label for="groupsYes" class="custom-control-label" for="groupsYes"><span>Si</span></label>
+        </div>
+        <div class="d-inline-block mr-5">
+          <input class="custom-control-input" id="groupsNo" name="groupActivities" value="false" type="checkbox">
+          <label for="groupsNo" class="custom-control-label"><span>No</span></label>
+        </div>
       </div>
     </div>
   </section>
-  <section class="row d-flex justify-content-center">
+  <section class="row d-flex text-center justify-content-center">
     <div class="card w-75 bg-light mb-5">
-      <h3>Estas interresat en activitats amb riscos? </h3>
-      <input class="custom-control-input" id="{{subcat.value}}" name="{{subcat.value}}" value="{{subcat.value}}" type="checkbox">
-      <label for="{{subcat.value}}" class="custom-control-label" for="customCheck2"><span _ngcontent-c7="">{{subcat.name}}</span></label>
-      <input class="custom-control-input" id="{{subcat.value}}" name="{{subcat.value}}" value="{{subcat.value}}" type="checkbox">
-      <label for="{{subcat.value}}" class="custom-control-label" for="customCheck2"><span _ngcontent-c7="">{{subcat.name}}</span></label>
+      <h3>Estàs interessat en activitats amb riscos? </h3>
+      <div class="custom-control custom-checkbox mb-3">
+        <div class="d-inline-block mr-5">
+          <input class="custom-control-input" id="risksYes" name="groupActivities" value="true" type="checkbox">
+          <label for="risksYes" class="custom-control-label" for="risksYes"><span>Si</span></label>
+        </div>
+        <div class="d-inline-block mr-5">
+          <input class="custom-control-input" id="risksNo" name="groupActivities" value="false" type="checkbox">
+          <label for="risksNo" class="custom-control-label"><span>No</span></label>
+        </div>
+      </div>
     </div>
   </section>
 </main>

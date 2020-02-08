@@ -14,7 +14,7 @@ export class QuestionarioComponent implements OnInit {
   ngOnInit() {
     this.categories = [{
       name: "Esports",
-      imgUrl: "../../assets/img/brand/deportes.jpg",
+      imgUrl: "../../assets/img/brand/deporteT.png",
       "subcategories": [
         {name: "Futbol", value: "football"},
         {name: "Natació", value: "swimming"},
@@ -26,7 +26,7 @@ export class QuestionarioComponent implements OnInit {
     },
     {
       name: "Animals",
-      imgUrl: "../../assets/img/brand/animales.png",
+      imgUrl: "../../assets/img/brand/animalsT.png",
       "subcategories": [
         {name: "Futbol", value: "football"},
         {name: "Natació", value: "swimming"},
@@ -38,7 +38,7 @@ export class QuestionarioComponent implements OnInit {
     },
     {
       name: "Cinema",
-      imgUrl: "../../assets/img/brand/cinema.jpg",
+      imgUrl: "../../assets/img/brand/movieT.png",
       "subcategories": [
         {name: "Futbol", value: "football"},
         {name: "Natació", value: "swimming"},
@@ -62,7 +62,7 @@ export class QuestionarioComponent implements OnInit {
     },
     {
       name: "Història",
-      imgUrl: "../../assets/img/brand/historia.png",
+      imgUrl: "../../assets/img/brand/historiaT.png",
       "subcategories": [
         {name: "Futbol", value: "football"},
         {name: "Natació", value: "swimming"},
