@@ -12,6 +12,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 import { HomeModule } from './home/home.module';
 import { LoginComponent } from './login/login.component';
@@ -32,6 +33,7 @@ import { EventosComponent } from './eventos/eventos.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     NgbModule.forRoot(),
     FormsModule,
     RouterModule,

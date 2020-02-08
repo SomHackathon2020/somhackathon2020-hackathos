@@ -1,5 +1,5 @@
 <main class="questionaris">
-  <section class="section-profile-cover section-shaped my-0">
+  <section class="section-profile-cover zIndex0 section-shaped my-0">
     <!-- Circles background -->
     <div class="shape shape-style-1 shape-primary alpha-4">
       <span></span>
@@ -17,13 +17,13 @@
       </svg>
     </div>
     <section id="informationDivQuestionaris" class="section align-center section-lg row d-flex justify-content-center">
-      <div class="bg-light shadow-sm rounded p-sm w-75 mt-5">
-        <h3>Qüestionari d'interessos</h3>
-        <p>Omple  el següent formulari per tindre una experiència personalitzada dins de la nostra plataforma.</p>
+      <div class="bg-success shadow-sm rounded p-sm w-75 mt-5">
+        <h2>Qüestionari d'interessos</h2>
+        <h4>Omple  el següent formulari per tindre una experiència personalitzada dins de la nostra plataforma.</h4>
       </div>
     </section>
   </section>
-  <section class="row d-flex justify-content-center">
+  <section class="row mtMinus100 d-flex justify-content-center">
     <div class="card w-75 bg-light mb-5" *ngFor="let cat of categories">
       <div class="text-center"><img class="" src="{{cat.imgUrl}}"><span class="hoverImgText">{{cat.name}}</span></div>
       <div class="text-center mt-3">
@@ -62,6 +62,12 @@
           <label for="risksNo" class="custom-control-label"><span>No</span></label>
         </div>
       </div>
+    </div>
+  </section>
+  <section class="row d-flex justify-content-center">
+    <div class="w-75">
+      <p class="text-warning h4 d-inline-block">*Recordi que sempre podrà canviar aquests elements al seu perfil.</p>
+      <button type="button" style="float: right;" class="btn btn-warning">Enviar</button>
     </div>
   </section>
 </main>
