@@ -1,0 +1,9 @@
+#informationDivQuestionaris {
+  padding-top: 10rem;
+}
+
+@media only screen and (max-width: 991px) {
+  #informationDivQuestionaris {
+    padding-top: 6rem;
+  }
+}

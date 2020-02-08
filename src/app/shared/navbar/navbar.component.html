@@ -25,18 +25,47 @@
         </div>
       </div>
       <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
-        <li class="nav-item dropdown">
-          <a class="nav-link no-caret" data-toggle="dropdown" role="button">
+        <li>
+          <a class="nav-link no-caret" [routerLink]="['/']" role="button">
             <i class="ni ni-collection d-lg-none"></i>
-            <span class="nav-link-inner--text">Perfil</span>
+            <span class="nav-link-inner--text">Home</span>
           </a>
-          <div class="dropdown-menu">
-            <a [routerLink]="['/']" class="dropdown-item">Landing</a>
-            <a [routerLink]="['/user-profile']" class="dropdown-item">Profile</a>
-            <a [routerLink]="['/login']" class="dropdown-item">Login</a>
-            <a [routerLink]="['/register']" class="dropdown-item">Register</a>
-            <a [routerLink]="['/test']" class="dropdown-item">Template Elements</a>
-          </div>
+        </li>
+        <li>
+          <a class="nav-link no-caret" [routerLink]="['/questionari']"  role="button">
+            <i class="ni ni-collection d-lg-none"></i>
+            <span class="nav-link-inner--text">Questionari</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav-link no-caret" [routerLink]="['/events']" role="button">
+            <i class="ni ni-collection d-lg-none"></i>
+            <span class="nav-link-inner--text">Events</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav-link no-caret" [routerLink]="['/user-profile']" role="button">
+            <i class="ni ni-collection d-lg-none"></i>
+            <span class="nav-link-inner--text">Profile</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav-link no-caret" [routerLink]="['/login']" role="button">
+            <i class="ni ni-collection d-lg-none"></i>
+            <span class="nav-link-inner--text">Login</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav-link no-caret" [routerLink]="['/register']" role="button">
+            <i class="ni ni-collection d-lg-none"></i>
+            <span class="nav-link-inner--text">Register</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav-link no-caret" [routerLink]="['/test']" role="button">
+            <i class="ni ni-collection d-lg-none"></i>
+            <span class="nav-link-inner--text">Template Elements</span>
+          </a>
         </li>
       </ul>
       <ul class="navbar-nav align-items-lg-center ml-lg-auto">
