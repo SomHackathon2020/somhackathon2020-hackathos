@@ -1,3 +1,5 @@
+import { QuestionarioComponent } from './questionario/questionario.component';
+import { EventosComponent } from './eventos/eventos.component';
 import { NgModule } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
@@ -10,11 +12,13 @@ import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes =[
-    { path: 'home',             component: HomeComponent },
+    { path: 'test',             component: HomeComponent },
     { path: 'user-profile',     component: ProfileComponent },
     { path: 'register',           component: SignupComponent },
-    { path: 'landing',          component: LandingComponent },
+    { path: 'home',          component: LandingComponent },
     { path: 'login',          component: LoginComponent },
+    { path: 'events',          component: EventosComponent },
+    { path: 'questionari',          component: QuestionarioComponent },
     { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
