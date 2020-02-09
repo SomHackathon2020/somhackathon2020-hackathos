@@ -1,4 +1,4 @@
-<main class="questionaris">
+<main class="eventos">
   <section class="section-profile-cover zIndex0 section-shaped my-0">
     <!-- Circles background -->
     <div class="shape shape-style-1 shape-primary alpha-4">
@@ -16,21 +16,43 @@
         <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
       </svg>
     </div>
-    <div class="blog-slider">
-      <div class="blog-slider__wrp swiper-wrapper">
-        <div class="blog-slider__item swiper-slide">
-          <div class="blog-slider__img">
-
-            <img src="https://res.cloudinary.com/muhammederdem/image/upload/v1535759872/kuldar-kalvik-799168-unsplash.jpg" alt="">
-          </div>
-          <div class="blog-slider__content">
-            <span class="blog-slider__code">26 December 2019</span>
-            <div class="blog-slider__title">Lorem Ipsum Dolor</div>
-            <div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? </div>
-            <a href="#" class="blog-slider__button">READ MORE</a>
-          </div>
+    <section id="informationDivEvents" class="section align-center section-lg row d-flex justify-content-center">
+      <div class="text-center p-sm w-75 mt-5">
+        <h1 class="text-white text-uppercase font-weight-bold" style="font-size: 4em;">Activitats Misterioses</h1>
+      </div>
+    </section>
+  </section>
+  <div *ngFor="let event of evento" class="blog-slider mtMinus150">
+    <div class="blog-slider__wrp swiper-wrapper">
+      <div class="blog-slider__item swiper-slide">
+        <div class="blog-slider__img">
+          <img src="assets/img/brand/interroganteT.png" alt="">
+        </div>
+        <div class="blog-slider__content">
+          <span class="blog-slider__code">{{event.date}}</span>
+          <div class="blog-slider__title">{{event.title}}</div>
+          <div class="blog-slider__text">{{event.description}}</div>
+          <div class="blog-slider__text">{{event.price}} </div>
+          <div class="blog-slider__text">{{event.dirrection}} </div>
+          <a (click)="showEvent(event.secciones)" class="blog-slider__button">Veure activitat</a>
+        </div>
+      </div>
+    </div>
+    <div class="blog-slider__pagination"></div>
+  </div>
+  <section class="row d-flex justify-content-center">
+    <div class="text-center p-sm w-75 mt-5">
+      <div *ngFor="let section of secciones" class="mb-3 eventSection bg-light card">
+        <div *ngIf="!section.ocult" class="eventStart">{{section.hora}}</div>
+        <div *ngIf="!section.ocult" class="eventParticipation">Participació</div>
+        <div *ngIf="!section.ocult" class="card-body">
+          {{section.pista}}
+        </div>
+        <div *ngIf="section.ocult" class="card-body">
+          Bloquejat
         </div>
       </div>
     </div>
   </section>
 </main>
+
