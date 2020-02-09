@@ -3,7 +3,7 @@
 ## Folder Structure
 HackaThos Folder -> SQL and Backend files
 
-PPTHACKATHOS.pptx -> Power Point Presentation
+HACKATHOS FINAL .pptx -> Power Point Presentation
 
 PPTHACKATHOSPDF.pdf -> Power Point Presentation PDF Version
 
