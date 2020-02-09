@@ -10,16 +10,18 @@ class UserController extends Controller{
    	}
 
     public function registre(){
-        $this->user->setEmail($this->sanitize($_POST["email"],1));
-        $this->user->setPassword($this->sanitize($_POST["pass"],1));
+        $json = file_get_contents('php://input');
+        //$data = json_decode($json)
+        $this->user->setEmail($this->sanitize($json->email,1));
+        $this->user->setPassword($this->sanitize($json->pass,1));
         //$this->user->setData($this->sanitize($_POST["datanaixement"],1));
-        $this->user->setNom($this->sanitize($_POST["nom"],1));
+        $this->user->setNom($this->sanitize($json->nom,1));
 
         $this->compnom();
         //$this->compdata();
         $this->compemails();
         $this->compcontra();
-        echo "Num: "+$this->errors()["user"]["numerrors"];
+        //echo "Num: "+$this->errors()["user"]["numerrors"];
 
         return $this->errors();
     }

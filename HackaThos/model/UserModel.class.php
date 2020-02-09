@@ -20,8 +20,8 @@ class UserModel{
     }
 
     public function getUser($usuari, $password){
-        $usuari = Controller::sanitize($_POST["email"],1);
-        $password = Controller::sanitize($_POST["pass"],1);
+        $usuari = Controller::sanitize($usuari,1);
+        $password = Controller::sanitize($password,1);
         $sql2 = "select * from users where correo='".$usuari."'";
         $stmt = $this->bd->executar($sql2);
         $row = $this->bd->obtenir_fila($stmt,0);

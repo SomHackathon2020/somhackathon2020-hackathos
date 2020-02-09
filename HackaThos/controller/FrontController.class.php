@@ -24,9 +24,11 @@ class FrontController extends Controller{
     }
        
     public function post(){
+        $json = file_get_contents('php://input');
+
         //comprovacions POST
-        if(($_SERVER['REQUEST_METHOD']) == 'POST' && isset($_POST["submit"])){
-            if($_POST["submit"]=="registre"){
+        if(isset($json->submit)){
+            if($json->submit =="registre"){
                 //echo "hello";
                 $array = $this->_userController->registre();
                 $this->_errors = array_merge($this->_errors, $array);
@@ -36,8 +38,8 @@ class FrontController extends Controller{
                     $textguardar = $this->_usermodel->errors();
                     $this->_errors = array_merge($this->_errors, $textguardar);
                 }
-            }else if($_POST["submit"]=="login"){
-                $this->_user = $this->_usermodel->getUser($_POST["email"],$_POST["pass"]);
+            }else if($json->submit =="login"){
+                $this->_user = $this->_usermodel->getUser($json->email,$json->pass);
                 $errorsinici = $this->_usermodel->errors();
                 $this->_errors = array_merge($this->_errors, $errorsinici);
             }

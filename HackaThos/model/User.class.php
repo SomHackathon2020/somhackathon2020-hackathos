@@ -74,7 +74,7 @@ class User{
 		$myObj->password = $this->_password;		
 		$myObj->foto = $this->_foto;
 		$myObj->interesos = $this->_interesos;
-		return json_encode($myObj);
+		return json_decode($myObj);
 	}
 }
 ?>
