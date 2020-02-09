@@ -26,21 +26,21 @@ class UserModel{
         $stmt = $this->bd->executar($sql2);
         $row = $this->bd->obtenir_fila($stmt,0);
         if($row){
-            if($row["email"] == $usuari && $row["password"] == $password){
+            if($row["correo"] == $usuari && $row["passwd"] == $password){
                 $retorn->nombre = $row["nombre"];
                 $retorn->fechanac = $row["fechanac"];
                 $retorn->icono = $row["icono"];
                 $retorn->correo = $row["correo"];
                 $retorn->intereses = $row["intereses"];
-                $data =  json_decode($retorn);
+                $data =  $retorn;
                 $errors["inici"]["text"] = '<span class="verd">Inici de Sessió Correcte</span>';
             }else{
                 $this->errors["inici"]["num"]++;
-                $this->errors["inici"]["text"] = '<span class="error">Dades Incorrectes</span>';  
+                $this->errors["inici"]["text"] = '<span class="error">Dades Incorrectes</span>';
             }
         }else{
             $this->errors["inici"]["num"]++;
-            $this->errors["inici"]["text"] = '<span class="error">Dades Incorrectes</span>';  
+            $this->errors["inici"]["text"] = '<span class="error">Dades Incorrectes</span>';
         }
         if($this->errors["inici"]["num"] == 0){
             return $data;
@@ -50,7 +50,7 @@ class UserModel{
     public function existeix($nombd,$nomform){
         $sql="select * from users where {$nombd}='{$nomform}'";
         $stmt = $this->bd->executar($sql);
-        return $this->bd->num_files($stmt) == 0 ? false : true; 
+        return $this->bd->num_files($stmt) == 0 ? false : true;
     }
 
     public function errors(){
@@ -58,7 +58,7 @@ class UserModel{
     }
     public function setbd($bd){
         $this->bd = $bd;
-   	} 
+   	}
 
 }
 

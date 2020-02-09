@@ -17,15 +17,15 @@ class FrontController extends Controller{
         $var = $this->_userController;
       	return $var;
    	}
-    
+
     public function getUModel(){
         $var = $this->_usermodel;
       	return $var;
     }
-       
+
     public function post(){
         $json = file_get_contents('php://input');
-
+        $json = json_decode($json);
         //comprovacions POST
         if(isset($json->submit)){
             if($json->submit =="registre"){
@@ -39,13 +39,14 @@ class FrontController extends Controller{
                     $this->_errors = array_merge($this->_errors, $textguardar);
                 }
             }else if($json->submit =="login"){
-                echo $data = $this->_user = $this->_usermodel->getUser($json->email,$json->pass);
-                $errorsinici = $this->_usermodel->errors();
-                $this->_errors = array_merge($this->_errors, $errorsinici);
+                //$data = $this->_user = $this->_usermodel->getUser($json->email,$json->pass);
+                echo json_encode($json);
+                //$errorsinici = $this->_usermodel->errors();
+                //$this->_errors = array_merge($this->_errors, $errorsinici);
             }
         }
     }
-    
+
     public function get(){
 
     }
