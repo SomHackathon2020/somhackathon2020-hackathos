@@ -32,18 +32,17 @@ class FrontController extends Controller{
                 //echo "hello";
                 $array = $this->_userController->registre();
                 $this->_errors = array_merge($this->_errors, $array);
-                echo $this->_errors["user"]["numerrors"];
+                //echo $this->_errors["user"]["numerrors"];
                 if($array["user"]["numerrors"] == 0){
                     $this->_usermodel->saveUser($this->_user);
                     $textguardar = $this->_usermodel->errors();
                     $this->_errors = array_merge($this->_errors, $textguardar);
                 }
             }else if($json->submit =="login"){
-                $this->_user = $this->_usermodel->getUser($json->email,$json->pass);
+                echo $data = $this->_user = $this->_usermodel->getUser($json->email,$json->pass);
                 $errorsinici = $this->_usermodel->errors();
                 $this->_errors = array_merge($this->_errors, $errorsinici);
             }
-
         }
     }
     
