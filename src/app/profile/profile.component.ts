@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,8 +9,17 @@ import { Component, OnInit } from '@angular/core';
 
 export class ProfileComponent implements OnInit {
 
-    constructor() { }
+  user: any;
 
-    ngOnInit() {}
+  constructor(public router: Router) { }
+
+  ngOnInit() {
+    if (!localStorage.getItem('user')) {
+      localStorage.removeItem('user');
+      this.router.navigate(['/login']);
+    } else {
+      this.user = localStorage.getItem('user');
+    }
+  }
 
 }

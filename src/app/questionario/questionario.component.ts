@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,9 +10,13 @@ export class QuestionarioComponent implements OnInit {
 
   public categories:  any[];
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit() {
+    if (!localStorage.getItem('user')) {
+      localStorage.removeItem('user');
+      this.router.navigate(['/login']);
+    }
     this.categories = [{
       name: "Esports",
       imgUrl: "../../assets/img/brand/deporteT.png",

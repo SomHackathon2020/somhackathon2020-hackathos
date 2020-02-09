@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,9 +11,13 @@ export class EventosComponent implements OnInit {
   evento: any[];
   secciones: any[];
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit() {
+    if (!localStorage.getItem('user')) {
+      localStorage.removeItem('user');
+      this.router.navigate(['/login']);
+    }
     this.evento = [{
       date: "20 Febrer 2020 - 16:00",
       title: "Activitat misteriosa",

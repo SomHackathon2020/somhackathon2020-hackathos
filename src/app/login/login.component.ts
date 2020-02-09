@@ -20,7 +20,6 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     if (localStorage.getItem('user')) {
       localStorage.removeItem('user');
-
     }
   }
 
@@ -28,8 +27,12 @@ export class LoginComponent implements OnInit {
     this.httpService.doPost({submit: "login", email: this.emailInput.nativeElement.value,
       pass: this.passwordInput.nativeElement.value}).subscribe((res) => {
         console.log(res);
-      localStorage.setItem('user', JSON.stringify(res));
-      this.router.navigate(['']);
+      if (res) {
+        localStorage.setItem('user', JSON.stringify(res));
+        this.router.navigate(['']);
+      } else {
+
+      }
     });
   }
 
