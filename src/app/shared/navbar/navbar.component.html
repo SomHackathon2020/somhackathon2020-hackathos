@@ -28,23 +28,23 @@
         <li>
           <a class="nav-link no-caret" [routerLink]="['/']" role="button">
             <i class="ni ni-collection d-lg-none"></i>
-            <span class="nav-link-inner--text">INICI</span>
+            <span class="nav-link-inner--text">Inici</span>
           </a>
         </li>
         <li>
-          <a class="nav-link no-caret" [routerLink]="['/questionari']"  role="button">
+          <a *ngIf="user" class="nav-link no-caret" [routerLink]="['/questionari']"  role="button">
             <i class="ni ni-collection d-lg-none"></i>
             <span class="nav-link-inner--text">Questionari</span>
           </a>
         </li>
         <li>
-          <a class="nav-link no-caret" [routerLink]="['/events']" role="button">
+          <a *ngIf="user" class="nav-link no-caret" [routerLink]="['/events']" role="button">
             <i class="ni ni-collection d-lg-none"></i>
             <span class="nav-link-inner--text">Events</span>
           </a>
         </li>
         <li>
-          <a class="nav-link no-caret" [routerLink]="['/user-profile']" role="button">
+          <a *ngIf="user" class="nav-link no-caret" [routerLink]="['/user-profile']" role="button">
             <i class="ni ni-collection d-lg-none"></i>
             <span class="nav-link-inner--text">Perfil</span>
           </a>
@@ -52,11 +52,12 @@
         <li>
           <a class="nav-link no-caret" [routerLink]="['/login']" role="button">
             <i class="ni ni-collection d-lg-none"></i>
-            <span class="nav-link-inner--text">Accedeix</span>
+            <span *ngIf="!user" class="nav-link-inner--text">Accedeix</span>
+            <span *ngIf="user" class="nav-link-inner--text">Tancar Sessió</span>
           </a>
         </li>
         <li>
-          <a class="nav-link no-caret" [routerLink]="['/register']" role="button">
+          <a *ngIf="!user" class="nav-link no-caret" [routerLink]="['/register']" role="button">
             <i class="ni ni-collection d-lg-none"></i>
             <span class="nav-link-inner--text">Registra't</span>
           </a>
