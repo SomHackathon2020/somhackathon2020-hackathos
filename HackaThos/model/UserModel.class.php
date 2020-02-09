@@ -27,8 +27,12 @@ class UserModel{
         $row = $this->bd->obtenir_fila($stmt,0);
         if($row){
             if($row["email"] == $usuari && $row["password"] == $password){
-                $array = ["nombre" => $row["nombre"],"fechanac" => $row["fechanac"],"icono" => $row["icono"],"correo" => $row["correo"],"intereses" => $row["intereses"]];
-                $_SESSION["usuari_valid"] = $array;
+                $retorn->nombre = $row["nombre"];
+                $retorn->fechanac = $row["fechanac"];
+                $retorn->icono = $row["icono"];
+                $retorn->correo = $row["correo"];
+                $retorn->intereses = $row["intereses"];
+                $data =  json_decode($retorn);
                 $errors["inici"]["text"] = '<span class="verd">Inici de Sessió Correcte</span>';
             }else{
                 $this->errors["inici"]["num"]++;
@@ -37,6 +41,9 @@ class UserModel{
         }else{
             $this->errors["inici"]["num"]++;
             $this->errors["inici"]["text"] = '<span class="error">Dades Incorrectes</span>';  
+        }
+        if($this->errors["inici"]["num"] == 0){
+            return $data;
         }
     }
 
